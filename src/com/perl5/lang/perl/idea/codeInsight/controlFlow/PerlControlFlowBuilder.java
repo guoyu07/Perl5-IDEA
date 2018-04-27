@@ -592,6 +592,11 @@ public class PerlControlFlowBuilder extends ControlFlowBuilder {
     }
 
     @Override
+    public void visitReplacementRegex(@NotNull PsiPerlReplacementRegex o) {
+      super.visitReplacementRegex(o);
+    }
+
+    @Override
     public void visitElement(@NotNull PsiElement element) {
       IElementType elementType = PsiUtilCore.getElementType(element);
       if (PerlTokenSets.HEREDOC_ENDS.contains(elementType) && !myOpenersQueue.isEmpty()) {
